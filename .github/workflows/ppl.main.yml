@@ -1,0 +1,21 @@
+name: CI Pipeline
+
+# Quando a pipeline será disparada
+on:
+  push:
+    branches:
+      - main
+
+# Define o trabalho da pipeline
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Faz o checkout do código no repositório
+    - name: Check out the repository
+      uses: actions/checkout@v3
+
+    # Exemplo de ação simples: imprimir uma mensagem no console
+    - name: Run a Hello World script
+      run: echo "Hello World, a pipeline foi configurada!"
